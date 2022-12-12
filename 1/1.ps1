@@ -4,20 +4,20 @@ $pocetSkritku = $emptyLines + 1
 $arraySkretu = New-Object int[] $pocetSkritku
 
 $totalLines = (Get-Content ./input.txt).Length
-$currentSkret = 1
+$currentSkret = 0
 $currentSkretHodnota = 0
 
 $i = 0
 while ($i -lt $totalLines){
     $currentData = Get-Content ./input.txt | Select-Object -Index $i
-    if (-not ($currentData = "")){
+    if ($currentData -ne ""){
         $currentSkretHodnota = $currentSkretHodnota + $currentData
-        echo $currentSkretHodnota
+        Write-Output $currentSkretHodnota
     }
     else {
         $arraySkretu[$currentSkret] = $currentSkretHodnota
 
-        echo
+        Write-Output ""
         #next skret
         $currentSkret++
         $currentSkretHodnota = 0
