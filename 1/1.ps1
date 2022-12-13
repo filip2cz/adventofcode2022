@@ -1,3 +1,5 @@
+#this day is not completed btw
+
 $emptyLines = (Get-Content ./input.txt) | Where-Object {$_.Trim() -eq ""} | Measure-Object | Select-Object -ExpandProperty Count
 $pocetSkritku = $emptyLines + 1
 
